@@ -1,0 +1,296 @@
+﻿%% start of file `template_en.tex'.
+%% Copyright 2007 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper]{moderncv}
+
+% moderncv themes
+% Here Blue is Blue itself, but not the blue itself.
+% Noted.
+\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+%\moderncvtheme[green]{classic}                % idem
+
+% character encoding
+%\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\recomputelengths                             % required when changes are made to page layout lengths
+
+% personal data
+\firstname{中}
+\familyname{秋} %这里中英文姓名的顺序不一样，注意一下就是了，不去改宏了。
+%\title{Resumé title (optional)}               % optional, remove the line if not wanted
+\address{君自故乡来}{应知故乡事}    % optional, remove the line if not wanted
+\mobile{+86-13920091003}                    % optional, remove the line if not wanted
+\phone{京V -02009}                      % optional, remove the line if not wanted
+%\fax{fax (optional)}                          % optional, remove the line if not wanted
+\email{lilybbs@live.cn}                      % optional, remove the line if not wanted
+%\extrainfo{additional information (optional)} % optional, remove the line if not wanted
+\photo[64pt]{yb}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+\quote{这份档案　带给找工作的你　一份中秋的快乐}                 % optional, remove the line if not wanted
+
+
+
+%这几行不再使用，仅做调试用，因为使用这几段可能会有错误，需要花时间去处理，在平时使用中可直接将此节删除。
+%Noted 3:39:09 10月3日　2009年　
+%Not yet used, 2nd, oct.2009.
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+%%Added for chinese support
+%\usepackage{hyperref}%不能有unicode选项，否则bookmark会是乱码
+%\usepackage[pdftitle={Jerry Fleming's Resume},pdftex,bookmarks,bookmarksopen=true,colorlinks]{hyperref}
+%Not yet used, 2nd, oct.2009.
+
+
+%------------------------------------------------------------------------------------------------------
+%U no, it's happy to use chinese now.
+%需要注明的是，这种方法是我暂时惟一发现中文XeLaTeX对moderncv原样支持的方式。
+%另外几种方式，我得花时间再去试一下，有很多问题，应该只是宏包的冲突。
+% 2009-10-3 3:41:57 Saturday
+\usepackage{xltxtra,fontspec,xunicode}    %Xelatex支持
+\usepackage{zhfont}                       %用zhspacing包支持，之后我再去看　另一种实现是否有问题。
+\zhspacing
+
+
+%----------------------------------------------------------------------------------------
+% 以下四行是设置可能用到的字体，但若无其它设定，本文档所用之默认字体为
+% $zhspacing/zhfont.sty文件中的第71行附近，关于zhsffont的定义
+% \newfontfamilywithslant\zhsffont{Adobe Heiti Std R}
+% 即以下四行配置无实际作用。zhfont中设定优先级更高。
+% zhspacing文档的解释是对于XeLaTeX和XeLaTeX对应的宏方案不同。
+% 亦不支持\font\myname={"SuSE"}型宏。
+\setzhmainfont[BoldFont=Adobe Heiti Std R]{Adobe Song Std L}%主要的中文字体
+\setmainfont{Arial}           %英文字体
+\setmonofont{Nimbus Sans L}                     %英文等宽体
+\setsansfont{Nimbus Sans L}    %不注释了　线性非线性，这边没有限制。
+%----------------------------------------------------------------------------------------
+% 当然，可以在文本档第14行处，将roman/san 选项换一下，就可以更换main字体了，
+% 但这并不能改变全文字体单调的囧境。
+%　2009-10-3 3:44:41 Saturday
+%一个折衷的方案，另定义字体宏。
+\usepackage{fontspec}  
+
+\newfontfamily\ni{"SimHei"}
+
+
+
+
+%这里可以任意定义名称，只要愿意。
+
+
+\usepackage{fancyhdr}
+\usepackage{color}
+
+%正如所看到的，这里hyperref的定义如下，可以将两个hypersetup合并，但这里两个略有不同些。
+%％％第二个setup默认无效，如果要使其生效，可以注释掉moderncv模板137行处相对应的设置。
+%这几处设置使hyperref支持中文。
+%2009-10-3 3:51:05 Saturday
+
+\RequirePackage{hyperref}
+\hypersetup{%
+  bookmarksnumbered=true,
+  CJKbookmarks=true,
+  bookmarksopen=false,
+  bookmarksopenlevel=1,
+  breaklinks=true,
+  colorlinks=false,
+  plainpages=false,
+  pdfpagelabels=true,
+  pdfborder=0 0 0}
+
+  %%要使一下段生效，将moderncv模板137行处相应行注释掉。
+  %%如果你的系统已经安装moderncv模板，那么它的可能位置是
+  %%$TEXHOME\texmf-dist\tex\latex\moderncv\moderncv.cls
+  %%2009-10-3 3:50:52 Saturday
+  
+    \hypersetup{%
+      pdfauthor     = SinoSuSE,
+      pdftitle      = 你的简历,%
+      pdfsubject    = 中秋佳节　人人欢喜,%
+      pdfkeywords   = 相濡以沫　为　相亲相爱,
+	  }  
+	  
+	  
+%不再使用。　2009-10-3 3:53:28 Saturday	  
+%这边，SUSE拿来了几个字体大小使用的定义，这些定义全部来自ThuThesis。
+%不再使用，只为对比参照磅值。 
+%10月3日　2009年
+% \suse@define@fontsize{chuhao}{42bp}
+% \suse@define@fontsize{xiaochu}{36bp}
+% \suse@define@fontsize{yihao}{26bp}
+% \suse@define@fontsize{xiaoyi}{24bp}
+% \suse@define@fontsize{erhao}{22bp}
+% \suse@define@fontsize{xiaoer}{18bp}
+% \suse@define@fontsize{sanhao}{16bp}
+% \suse@define@fontsize{xiaosan}{15bp}
+% \suse@define@fontsize{sihao}{14bp}
+% \suse@define@fontsize{banxiaosi}{13bp}
+% \suse@define@fontsize{xiaosi}{12bp}
+% \suse@define@fontsize{dawu}{11bp}
+% \suse@define@fontsize{wuhao}{10.5bp}
+% \suse@define@fontsize{xiaowu}{9bp}
+% \suse@define@fontsize{liuhao}{7.5bp}
+% \suse@define@fontsize{xiaoliu}{6.5bp}
+% \suse@define@fontsize{qihao}{5.5bp}
+% \suse@define@fontsize{bahao}{5bp}
+
+% 这里　再提供几个可以使用的命令，用来调整字体大小。
+% 不提倡使用这些命令，因为这些命令的使用和字体磅数的联系并不明确。
+% 在实际使用比较后才会有所判断选择。
+% 如果有兴趣，相关定义可以在$texmf-dict/source/latex/base/classes.dtx中得到。
+% # {\Huge          SinoSuSE}
+% # {\huge          SinoSuSE}
+% # {\LARGE         SinoSuSE}
+% # {\Large         SinoSuSE}
+% # {\large         SinoSuSE}
+% # {\normalsize    SinoSuSE}
+% # {\small         SinoSuSE}
+% # {\footnotesize  SinoSuSE}
+% # {\scriptsize    SinoSuSE}
+% # {\tiny          SinoSuSE}
+
+
+
+%-------------%--------------------------------------------------------------------------
+%-------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+
+%%在这边　文档开始的地方，介绍一下这个命令，用来给每一个枚举项添加前置标志符。
+%%\renewcommand{\listitemsymbol}{-} % change the symbol for lists
+
+
+\section{教育背景}
+%\cventry{year--year}{Degree}{Institution}{City}{\textit{Grade}}{Description}  % arguments 3 to 6 are optional
+\cventry{2005.8-2009.12}{高力士}{}{一所大学}{一家学院}{2005-2009　有点奖学金    \hfill   倒没有挂科}  % arguments 3 to 6 are optional
+\cventry{2005.8-2009.12}{圣斗士}{}{另一所大学}{XYZ学院}{ \color{green} Any other descriptions?}  % arguments 3 to 6 are optional
+
+
+% 原来这一段，是可以套用来写发过的文章的。
+% 就不删了，谁要是想用就直接用着吧。
+%　10月3日
+%\section{Thesis}
+%\cvline{title}{\emph{Title}}
+%\cvline{supervisors}{Supervisors}
+%\cvline{description}{\small Short thesis abstract}
+
+\section{项目经历}
+%\subsection{Vocational}
+%这是　cventry的一个例子，其实和上面　教育背景　栏中使用的cventry使用相同的范例
+%\cventry{year--year}{Job title}{Employer}{City}{}{Description}                % arguments 3 to 6 are optional
+
+\cventry{2009.5-2009.6}{月下独酌 }{李白}{三人}{}{吟得一首好诗。}
+
+% 
+%  这边举例可以用自己的字体插入并且调整字体大小，(具体字体的磅值和常见字号比可以参见本文档113行)。
+%
+%  方法1.直接插入所要字体,指定字体名称和大小
+%  不再自定义宏实现。
+%　{\font\zhfont="SimSun" at 10bp  负责项目前期资料收集，撰写行业及竞争对手分析，筛选客户。主要客户为筹备上市中的中小型企业，多为生物，医疗器械等高新技术产业。}                
+%  当然，如果自定义英文输入并自定义大小，也可以的。  
+%　{\font\rm="Consolas" at 14pt \rm This is SinoSuSE.}
+%  Tips:如何知道自己想输入的字体名，输入fc-list>suse.txt　再打开suse.txt查找就可以了。
+%
+% 方法2. 替换main字体，在使用完后替换回来  
+% \\
+% \newfontfamilywithslant\zhsffont{SimSun}
+% 中文\textbf{测试}。\textit{中文\textbf{测试}。}
+% \newfontfamilywithslant\zhsffont{FangSong_GB2312}
+% 中文\textbf{测试}。\textit{中文\textbf{测试}。}
+% \newfontfamilywithslant\zhsffont{Adobe Heiti Std R}
+%
+% 方法3. 设定宏，宏的方式观赏性比较好。
+% 宏的定义在　本文档76行
+% \newfontfamily\ming{"STZhongsong"}
+% 宏的使用在本文档186行
+% {\ming   负责行业及竞争}
+% 但这一方式的问题又很显然，因为没有办法直接指定字体大小
+% 这里折衷的方案是　使用本文档106行处的字体大小控制宏。
+%
+
+
+
+\section{课外活动}
+%这一段仍然使用之前　的模板。
+
+\cventry{2006.9-2007.6}{\ni 春天}{}{不知细叶谁裁出}{}
+					  {\font\zhfont="SimSun" at 10bp　1979年，那是一个春天　\\    
+			           　那一个圆圈圈，他就画在这边}
+% 
+						
+\cventry{2007.11-2008.2}{夏天}{}{}{城上朱旗夏令初}	
+					  {\font\zhfont="文泉驛正黑" at 10bp　还记得　大明湖畔的　夏雨荷么\\
+			           　蒲草韧如丝，磐石无转移，一点点可以}
+                     
+
+\cventry{2008.2-2008.5 }{秋天 }{}{为赋新词强说愁}{}	
+					  {\font\zhfont="AR PL UMing TW" at 10bp　 每两个星期去敬老院为老人演奏钢琴\\
+			           　参与图书义卖活动}
+ 
+
+\cventry{ 2006.8-2008.5  }{冬天  }{}{雪上空留马行处}{}	
+					  {\font\zhfont="Adobe Kaiti Std R" at 10bp　忽如一夜春风来 \\
+			           　一树梨花压海棠}
+ 
+
+						
+		
+\section{英语水平}
+\cvlanguage{\color{red} time 1}{国家英语四级考试}{同下}
+\cvlanguage{\color{red} time 2}{国家英语六级考试}{同上}
+
+
+ \section{获得奖励}
+ \cvline{2005-2009}{\small 没有}
+ \cvline{2005.9-2009.10}{\small 同上一下子}
+ \cvline{}{\small 相濡以沫为相亲相爱}
+
+
+
+% \section{Computer skills}
+% \cvcomputer{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
+% \cvcomputer{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
+% \cvcomputer{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
+
+% \section{Interests}
+% \cvline{hobby 1}{\small Description}
+% \cvline{hobby 2}{\small Description}
+% \cvline{hobby 3}{\small Description}
+
+% \closesection{}                   % needed to renewcommands
+% \renewcommand{\listitemsymbol}{-} % change the symbol for lists
+
+% \section{Extra 1}
+% \cvlistitem{Item 1}
+% \cvlistitem{Item 2}
+% \cvlistitem[+]{Item 3}            % optional other symbol
+
+% \section{Extra 2}
+% \cvlistdoubleitem[\Neutral]{Item 1}{Item 4}
+% \cvlistdoubleitem[\Neutral]{Item 2}{Item 5}
+% \cvlistdoubleitem[\Neutral]{Item 3}{}
+% 　
+% % 这边我们用不到bibtex，所以不用关心这一段。
+% % 当然，如果要写论文的时候，还是需要好好读一读bibtex的
+% % Bibtex三要素:(SuSE总结的。。。)
+% % .bib file
+% % \cite
+% % \bibliographystyle{}&\bibliography{}
+% % Publications from a BibTeX file
+% \nocite{*}
+% \bibliographystyle{plain}
+% \bibliography{publications}       % 'publications' is the name of a BibTeX file
+
+\end{document}
+
+%% Tips:
+%% 1. 平时使用换行符，为 \\。　即两个反候斜杠，但这个宏包下使用可能会有警告，虽然并不妨碍编译，但可以将换行符　换成 \newline{} 
+
+%% end of file `template_en.tex'.
