@@ -1,9 +1,12 @@
 \documentclass[12pt,a4paper]{moderncv}
 \moderncvtheme[green]{classic}
-\usepackage{xltxtra}
+%\usepackage{xltxtra}
+%\usepackage[adobefonts,noindent]{ctex}
 \usepackage{zhspacing}\zhspacing
+\setlength{\parindent}{0pt}
+
 \usepackage{color}
-\usepackage[top=1.5cm, bottom=1.5cm, left=1.5cm, right=2cm]{geometry}
+\usepackage[top=1.2cm, bottom=1.2cm, left=1.7cm, right=2cm]{geometry}
 
 %------------------------------------------------------
 %                 personal data
@@ -24,39 +27,19 @@
 %------------------------------------------------------
 
 \begin{document}
-\maketitle
-
-\section{学习经历}
-
+\maketitle\section{学习经历}
 \cventry{2005.9--2009.6}{信息工程专业~工科学士}{西安交通大学}{电子与信息工程学院}{}
-		{曾获奖励\hspace{2em}2006年思源奖学金}
-		
+	{曾获奖励\hspace{2em}2006年思源奖学金}
 \cventry{2009.9至今}{系统工程专业~硕士研究生在读}{西安交通大学}{电子与信息工程学院}{系统工程研究所}
 	{主要研究方向：数字图像处理}
-
 \section{项目与实习经历}
-\cventry{2011.5--2011.8}{淘宝网主站应用运维\ 实习}{淘宝网主站PE团队}{}{}
-	{参与淘宝主站应用运维日常发布、迁移、扩容、排错等工作，从中了解淘宝PE工作职责和淘宝应用服务架构体系，熟悉淘宝应用运维工作流程，熟悉各类日常运维工具。}
-
-\cventry{2009.2--2011.5}{xjtuns.cn开发及维护}{xjtunice团队}{LAMP,HTML,python}{}
-	{xjtuns.cn项目包括一个p2p发布站点和相应客户端，一个文件共享站点，一个Linux软件源。本人参与项目包括服务器管理（两台Debian Linux服务器），p2p发布站点开发（两人合作），Linux平台客户端开发（使用python，修改自开源项目Deluge）。}
-
-\cventry{2010.3--2010.9}{ASTE-P2.0 VTK可视化开发\ 实习}{Advanced Dynamics中国公司}{VTK,C++}{}
-	{ASTE-P是Linux平台计算流体/结构力学等的软件，使用VTK库为计算源/结果网格生成可视化2D/3D图像用以交互。项目在Linux平台开发，使用C++封装VTK库，并为tcl语言提供接口。}
-	
-\cventry{2008.6--2010.3}{蜜网及蜜网防火墙维护}{西安交通大学智能网络与网络安全实验室}{Linux,Iptables}{}
-	{此项目中蜜网用于僵尸网络研究，初期蜜网防火墙使用Honeynet开源项目提供的Roo系统（基于CentOS），后改为在Debian Linux上进行定制及脚本开发。本人参与Roo系统维护与Debian的定制脚本开发。}
-
-\cventry{2008.1--2010.3}{linux.xjtu.edu.cn服务器维护}{西安交通大学Linux用户组}{Linux,ftp}{}
-	{维护项目，服务器用于为校内linux用户提供软件源及ftp服务。}
-
-\cventry{2008.6--2008.7}{电话交换机操作实习}{大唐电信技术有限公司}{}{}
-	{专业统一实习，接触包括电话交换机操作、7号信令等相关内容。}
-
-\cvitem{}{兵马俑BBS Linux版/Program版版务}
-%\section{研究兴趣}
-%\cventry{计算机}{网络安全技术, Linux}{}{}{}{}
-
+\cventry{2011.5--2011.8}{淘宝网主站应用运维\ 实习}{淘宝网主站PE团队}{}{} {}%	{参与淘宝主站应用运维日常发布、迁移、扩容、排错等工作，从中了解淘宝PE工作职责和淘宝应用服务架构体系，熟悉淘宝应用运维工作流程，熟悉各类日常运维工具。}
+\cventry{2009.2--2011.5}{xjtuns.cn开发及维护}{xjtunice团队}{LAMP,HTML,python}{} {}%	{xjtuns.cn项目包括一个p2p发布站点和相应客户端，一个文件共享站点，一个Linux软件源。本人参与项目包括服务器管理（两台Debian Linux服务器），p2p发布站点开发（两人合作），Linux平台客户端开发（使用python，修改自开源项目Deluge）。}
+\cventry{2010.3--2010.9}{ASTE-P2.0 VTK可视化开发\ 实习}{Advanced Dynamics中国公司}{VTK,C++}{} {}%	{ASTE-P是Linux平台计算流体/结构力学等的软件，使用VTK库为计算源/结果网格生成可视化2D/3D图像用以交互。项目在Linux平台开发，使用C++封装VTK库，并为tcl语言提供接口。}
+\cventry{2008.6--2010.3}{蜜网及蜜网防火墙维护}{西安交通大学智能网络与网络安全实验室}{Linux,Iptables}{} {}%	{此项目中蜜网用于僵尸网络研究，初期蜜网防火墙使用Honeynet开源项目提供的Roo系统（基于CentOS），后改为在Debian Linux上进行定制及脚本开发。本人参与Roo系统维护与Debian的定制脚本开发。}
+\cventry{2008.1--2010.3}{linux.xjtu.edu.cn服务器维护}{西安交通大学Linux用户组}{Linux,ftp}{} {}%	{维护项目，服务器用于为校内linux用户提供软件源及ftp服务。}
+\cventry{2008.6--2008.7}{电话交换机操作实习}{大唐电信技术有限公司}{}{} {}%	{专业统一实习，接触包括电话交换机操作、7号信令等相关内容。}
+\cvitem{}{兵马俑BBS Linux版/Program版版务}%\section{研究兴趣}%\cventry{计算机}{网络安全技术, Linux}{}{}{}{}
 \section{计算机技能}
 \cvitem{系统}{Debian重度用户, Archlinux用户, Gentoo用户, 熟悉Linux内核裁剪, 熟悉Windows}
 \cvitem{桌面环境}{熟悉GNOME, KDE3/4, LXDE}
@@ -64,20 +47,12 @@
 \cvitem{开发语言}{Linux平台: Bash shell, PHP, HTML, Python, C, C++, tcl}
 \cvitem{数据库}{MySQL}
 \cvitem{开发工具}{Vim重度用户, 熟悉KDevelop, git, svn, doxygen, 了解cmake, gcc}
-
 \section{语言技能}
 \cvlanguage{普通话}{流利}{}
 \cvlanguage{粤语}{一般交流}{}
 \cvlanguage{English}{CET 6 Passed}{}
 \closesection{}
-
 \section{兴趣爱好}
 \cvitem{体育}{\small 自行车, 乒乓球 }
 \cvitem{艺术}{\small 书法 }
-
-\section{自我评价}
-\cvlistitem{做事认真，勤于思考，乐于钻研，对解决问题有自己的见解}
-\cvlistitem{有团队精神，能很好的与他人交流沟通从而扩展自己的思维方向，亦能很好的参与团队合作分工}
-\cvlistitem{自信，乐观，有责任感}
-
 \end{document}
